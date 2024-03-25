@@ -11,42 +11,42 @@ function Book(title, author, pages, status) {
   this.info = function () {
     return `${this.title} by ${this.author}, ${this.pages} pages, ${this.status}`;
   };
-  // this.toggleStatus = function () {
-  //   this.status = !this.status;
-  // };
 }
 
-const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', 295, true);
-
-myLibrary.push(theHobbit);
-
 Book.prototype.toggleStatus = function () {
-  if (this.status) {
-    return 'read';
-  }
-  return 'not read yet';
+  this.status = !this.status;
 };
+
+function toggleBookStatus(index) {
+  myLibrary[index].toggleStatus();
+  showAllBooks(myLibrary);
+}
 
 function addBookToLibrary(title, author, pages, status) {
   const bookToAdd = new Book(title, author, pages, status);
   myLibrary.push(bookToAdd);
 }
 
-addBtn.addEventListener('click', (e) => {
+formEl.addEventListener('submit', (e) => {
   e.preventDefault();
+  const title = document.querySelector('#title').value;
+  const author = document.querySelector('#author').value;
+  const pages = document.querySelector('#pages').value;
+  const status = document.querySelector('#status').checked;
+
+  addBookToLibrary(title, author, pages, status);
+
+  showAllBooks(myLibrary);
 });
 
 function showAllBooks(library) {
-  myLibrary.map((book) => {
+  containerEl.innerHTML = '';
+  myLibrary.map((book, index) => {
     containerEl.innerHTML += ` <div class="book">
     <h2>${book.title} by ${book.author}</h2>
     <p>Total pages: ${book.pages}</p>
-    <p>Status: ${book.toggleStatus()}</p>
+    <p>Status: ${book.status ? 'read' : 'not read yet'}</p>
+    <button onclick='toggleBookStatus(${index})'>Change status</button>
   </div>`;
   });
 }
-showAllBooks();
-
-// NEW BOOK button that brings up a form allowing user to input the new book
-
-// Add a Status button on each book to  change its 'read' status

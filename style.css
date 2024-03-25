@@ -6,6 +6,8 @@
 body {
   margin: 0 auto;
   background-color: #f0efef;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 #add-btn {
