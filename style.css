@@ -5,11 +5,12 @@
 }
 body {
   margin: 0 auto;
+  background-color: #f0efef;
 }
 
 #add-btn {
   display: block;
-  margin: 30px auto;
+  margin: 10px auto 30px;
   background-color: #369337;
   color: #fff;
   padding: 10px 15px;
@@ -27,8 +28,19 @@ body {
   align-items: center;
 }
 
-.book {
-  background: #dddada;
-  padding: 10px;
+.book,
+form {
+  background: #fff;
+  padding: 10px 20px;
   border-radius: 8px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  max-width: 50%;
+  margin: 30px auto;
 }

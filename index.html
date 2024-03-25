@@ -8,28 +8,19 @@
     <script src="app.js" defer></script>
   </head>
   <body>
-    <button id="add-btn">Add a book</button>
-    <div class="container">
-      <div class="book">
-        <h2>Book title - Author</h2>
-        <p>pages</p>
-        <p>status</p>
-      </div>
-      <div class="book">
-        <h2>Book title - Author</h2>
-        <p>pages</p>
-        <p>status</p>
-      </div>
-      <div class="book">
-        <h2>Book title - Author</h2>
-        <p>pages</p>
-        <p>status</p>
-      </div>
-      <div class="book">
-        <h2>Book title - Author</h2>
-        <p>pages</p>
-        <p>status</p>
-      </div>
-    </div>
+    <form>
+      <h1>Add a book</h1>
+      <label for="title">Book title</label>
+      <input type="text" id="title" />
+      <label for="author">Author</label>
+      <input type="text" id="author" />
+      <label for="pages">Total pages</label>
+      <input type="text" id="pages" />
+      <label for="status">Read?</label>
+      <input type="checkbox" id="status" />
+      <button id="add-btn">Add</button>
+    </form>
+
+    <div class="container"></div>
   </body>
 </html>
