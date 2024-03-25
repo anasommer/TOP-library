@@ -11,11 +11,10 @@ function Book(title, author, pages, status) {
   this.info = function () {
     return `${this.title} by ${this.author}, ${this.pages} pages, ${this.status}`;
   };
+  this.toggleStatus = function () {
+    this.status = !this.status;
+  };
 }
-
-Book.prototype.toggleStatus = function () {
-  this.status = !this.status;
-};
 
 function removeBook(index) {
   myLibrary.splice(index, 1);
