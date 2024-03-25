@@ -17,6 +17,11 @@ Book.prototype.toggleStatus = function () {
   this.status = !this.status;
 };
 
+function removeBook(index) {
+  myLibrary.splice(index, 1);
+  showAllBooks(myLibrary);
+}
+
 function toggleBookStatus(index) {
   myLibrary[index].toggleStatus();
   showAllBooks(myLibrary);
@@ -46,7 +51,8 @@ function showAllBooks(library) {
     <h2>${book.title} by ${book.author}</h2>
     <p>Total pages: ${book.pages}</p>
     <p>Status: ${book.status ? 'read' : 'not read yet'}</p>
-    <button onclick='toggleBookStatus(${index})'>Change status</button>
+    <button onclick='toggleBookStatus(${index})' id="status-btn">Change status</button>
+    <button onclick='removeBook(${index})' id="remove-btn">Remove</button>
   </div>`;
   });
 }

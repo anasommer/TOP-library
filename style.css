@@ -10,9 +10,11 @@ body {
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-#add-btn {
+#add-btn,
+#status-btn,
+#remove-btn {
   display: block;
-  margin: 10px auto 30px;
+  margin: 10px auto;
   background-color: #369337;
   color: #fff;
   padding: 10px 15px;
@@ -20,6 +22,15 @@ body {
   font-weight: bold;
   text-transform: uppercase;
   border-radius: 4px;
+}
+
+#status-btn {
+  background-color: #bcf431;
+  color: #000;
+}
+
+#remove-btn {
+  background-color: #ed0d0d;
 }
 
 .container {
