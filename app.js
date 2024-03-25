@@ -8,12 +8,18 @@ function Book(title, author, pages, status) {
   this.info = function () {
     return `${this.title} by ${this.author}, ${this.pages} pages, ${this.status}`;
   };
+  // this.toggleStatus = function () {
+  //   this.status = !this.status;
+  // };
 }
 
-const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', 295, 'not read yet');
+const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', 295, true);
 
-Book.prototype.sayHello = function () {
-  console.log("Hello, I'm a player!");
+Book.prototype.toggleStatus = function () {
+  if (this.status) {
+    return 'read';
+  }
+  return 'not read yet';
 };
 
 function addBookToLibrary(title, author, pages, status) {
@@ -27,7 +33,9 @@ function showAllBooks(library) {
   });
 }
 
-// Loop through myLIbrary and display eavh book on the page
+console.log(theHobbit.toggleStatus());
+
+// Loop through myLibrary and display each book on the page
 
 // NEW BOOK button that brings up a form allowing user to input the new book
 
