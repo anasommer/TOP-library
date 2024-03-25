@@ -26,3 +26,9 @@ function showAllBooks(library) {
     console.log(book);
   });
 }
+
+// Loop through myLIbrary and display eavh book on the page
+
+// NEW BOOK button that brings up a form allowing user to input the new book
+
+// Add a Status button on each book to  change its 'read' status
